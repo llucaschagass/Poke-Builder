@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Equipe Pokémon</h1>
+    <table id="team-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo Primário</th>
+                <th>Tipo Secundário</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pokemon : ${team}">
+                <td th:text="${pokemon.nome}"></td>
+                <td th:text="${pokemon.tipoPrimario}"></td>
+                <td th:text="${pokemon.tipoSecundario} ?: '-'"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
